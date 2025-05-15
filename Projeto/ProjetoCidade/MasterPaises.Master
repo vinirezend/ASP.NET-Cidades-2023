@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPaises.Master.cs" Inherits="ProjetoCidade.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body{
+            background-color: #c2c286;
+        }
+        #btnFiltros{
+            border: none;
+            background-color: transparent;
+        }
+        #divFiltros{
+            display: contents;
+        }
+        #divNav{
+            position: sticky;
+            top: 0px;
+        }
+        .btnRemover{
+            border: none;
+            background-color: transparent;
+        }
+        nav{
+            background-image: url("imagens/madeira_escura.jpg");
+            background-repeat: repeat-x;
+        }
+        .card{
+            background-image: url("imagens/madeira_clara.jpg");
+            background-repeat: repeat-y;
+        }
+        .accordion-button{
+            background-image: url("imagens/madeira_escura.jpg");
+            background-repeat: repeat-y;
+        }
+        .accordion-body{
+            background-image: url("imagens/madeira_clara.jpg");
+            background-repeat: repeat-y;
+        }
+        .collapse hr{
+            border: solid 1px white;
+            opacity: 1;
+        }
+        #add{
+            background-image: url("imagens/madeira_escura.jpg");
+            color: white;
+        }
+        .offcanvas{
+            background-color: #c2c286;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="divNav" class="row justify-content-center z-3">
+            <nav class="navegacao navbar navbar-expand-lg bg-body-secondary border border-dark rounded-2 shadow mx-2 my-4 col-md-8">
+                <div class="container-fluid">
+                    <a class="text-light navbar-brand" href="#">Listas:</a>
+                    <button class="navbar-toggler text-bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+				    </button>
+                    <div class="collapse navbar-collapse justify-content-between w-md-100%" id="navbarSupportedContent">
+                        <ul class="navbar-nav nav nav-underline me-auto-mb-2 mb-lg-0">
+                            <li class="nav-item my-2 my-lg-0">
+                                <a class="text-light nav-link" href="ListagemPaises.aspx">Países</a>
+                            </li>
+                            <li class="nav-item mt-1 my-lg-0">
+                                <a class="text-light nav-link" href="ListagemEstados.aspx">Estados</a>
+                            </li>
+                            <li class="nav-item2 mt-1 my-lg-0">
+                                <a class="text-light nav-link" href="ListagemCidades.aspx">Cidades</a>
+                            </li>
+                        </ul>
+                        <hr class="d-lg-none w-25%"/>
+                        <div class="float-sm-end">
+                            <a class="btn btn-light mt-3 mt-lg-0" href="LoginUsuario.aspx" role="button"><span class="d-none d-lg-inline-block">Sair</span> <i class="fa-solid fa-right-from-bracket"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <form id="formTabela" runat="server" autocomplete="off" style="width: ">
+                <asp:ContentPlaceHolder ID="Content" runat="server">
+                </asp:ContentPlaceHolder>
+        </form>
+
+        <asp:ContentPlaceHolder ID="script" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <script src="bootstrap/JS/all.min.js" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        //document.getElementById("btnMsgSair").onmouseover = function () { MouseOn() };
+        //document.getElementById("btnMsgSair").onmouseout = function () { MouseOut() };
+
+        function MouseOn() {
+            document.getElementById("msgSair").style.display = "block";
+        }
+
+        function MouseOut() {
+            document.getElementById("msgSair").style.display = "none";
+        }
+
+    </script>
+    <script type="text/javascript">
+        var input = document.querySelector("#txtNome");
+        if (input != null) {
+            var text = input.value
+
+            if (text == null || text == "") {
+                document.getElementById("divAccordion").style.display = "none";
+            }
+            else {
+                document.getElementById("divAccordion").style.display = none;
+            }
+        }
+    </script>
+</body>
+</html>

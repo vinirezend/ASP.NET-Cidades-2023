@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterUsuarios.Master.cs" Inherits="ProjetoCidade.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body{
+            background-color: #c2c286;
+        }
+        .card-header{
+            background-image: url("imagens/madeira_escura.jpg");
+            background-repeat: repeat-x;
+        }
+        .card-body{
+            background-image: url("imagens/madeira_clara.jpg");
+            background-repeat: repeat-x;
+        }
+        .card-footer{
+            background-image: url("imagens/madeira_escura.jpg");
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+
+    <body>
+        <div class="container">
+            <form id="form1" class="row justify-content-center" runat="server" autocomplete="off">
+                <asp:ContentPlaceHolder ID="conteudo" runat="server">
+                </asp:ContentPlaceHolder>
+            </form>
+        </div>
+    </body>
+    <asp:ContentPlaceHolder ID="script" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="bootstrap/JS/all.min.js" type="text/javascript"></script>
+</html>
